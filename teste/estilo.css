@@ -3,6 +3,7 @@
 } 
 
 header {
+    max-width: 100%;
     width: 1200px;
     padding: 10px;
 }
@@ -27,6 +28,7 @@ h1 {
 }
 
 nav{
+    max-width: 100%;
     width: 1200px;
     background-color: rgb(83, 170, 185);
     border-radius: 20px;
@@ -96,5 +98,6 @@ footer {
     background-color: rgb(83, 170, 185);
 
 }
+
 
 
