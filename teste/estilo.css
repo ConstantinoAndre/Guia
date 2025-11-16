@@ -3,6 +3,8 @@
 } 
 
 header {
+    max-width: 100%;
+    height: auto;
     padding: 10px;
 }
 
@@ -92,4 +94,5 @@ footer {
     font-weight: bold;
     text-align: center;
     background-color: rgb(83, 170, 185);
+
 }
