@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Roteirização</title>
+    <link rel="stylesheet" href="teste/estilo.css">
+
+</head>
+<body>
+    
+    <header>
+        <h1>
+            Desafios na Implementação de WMS para Roteirização de Separação (Picking) e Estratégias para Superá-los
+        </h1>
+    </header>
+
+    <nav>
+        <a href="roteirização.html">Roteirização</a> |
+        <a href="treinamento.html">Treinamento</a> |
+        <a href="otimização.html">Otimização</a> |
+        <a href="kpis.html">Kpis</a> |
+    </nav>
+
+    <main>
+        
+    <p>
+        A implementação de um Sistema de Gerenciamento de Armazém (WMS) é um passo fundamental para otimizar a roteirização de separação, pois ele fornece os algoritmos e a tecnologia necessários para guiar o operador pelo caminho mais eficiente. No entanto, o processo de implementação apresenta desafios significativos que, se não gerenciados, podem comprometer os ganhos de eficiência esperados.
+    </p>
+    
+    <h2>
+        Abaixo, detalhamos os principais desafios e as estratégias para superá-los, focando na função de roteirização de *picking*.
+    </h2>
+
+    <h3>
+        | Desafio Principal | Descrição e Impacto na Roteirização | Estratégias para Superar |
+    </h3>
+
+    <p>
+        **1. Resistência à Mudança da Equipe** | Operadores acostumados a rotas manuais ou "de memória" podem resistir ao WMS, ignorando as rotas otimizadas e voltando aos seus hábitos. Isso anula a otimização e gera inconsistência. | **Treinamento Focado no "Porquê":** Demonstrar na prática (com simulações e dados) que a rota do WMS é mais rápida. **Engajamento:** Envolver os operadores-chave no processo de *design* e teste das rotas. **Incentivos:** Vincular a adesão à rota a programas de reconhecimento e produtividade. 
+    </p>
+
+     <p>**2. Mapeamento Inadequado do Processo** | Falha em documentar e modelar corretamente o *layout* físico do armazém (endereços, corredores, restrições de acesso) no WMS. O algoritmo de roteirização pode gerar rotas impraticáveis ou ineficientes. | **Auditoria Física Detalhada:** Realizar um levantamento minucioso do armazém antes da implementação. **Testes de Campo (Walk-Throughs):** Testar exaustivamente as rotas geradas pelo WMS em campo, com a equipe, para validar a precisão do modelo. </p>
+
+     <p>
+        **3. Integração Ineficaz com Outros Sistemas** | O WMS precisa se comunicar perfeitamente com o ERP (para dados de pedidos e estoque) e com sistemas de automação (como *Pick-to-Light*). Falhas na integração podem levar a dados desatualizados, resultando em rotas para locais vazios ou pedidos incompletos. | **Interface de Integração Robusta:** Investir em interfaces de programação de aplicações (APIs) estáveis e em tempo real. **Testes de Ponta a Ponta:** Realizar testes de volume e estresse para garantir que a comunicação entre os sistemas seja fluida, especialmente em picos operacionais.
+     </p> 
+
+     <p>
+        **4. Falta de Qualidade e Padronização dos Dados** | Dados de estoque incorretos (inventário inexato, endereçamento errado) levam o WMS a roteirizar o operador para um local onde o item não está. Isso força o operador a desviar da rota, perdendo a confiança no sistema. | **Inventário Cíclico Rigoroso:** Implementar um processo de contagem cíclica para manter a acuracidade do estoque acima de 99%. **Padronização de Endereçamento:** Garantir que todos os produtos estejam endereçados de forma única e lógica no sistema. 
+     </p>
+
+     <p>
+        **5. Escolha de um WMS Inadequado** | Selecionar um sistema que não possui algoritmos de roteirização avançados (como TSP ou *S-Shape* adaptativo) ou que não suporta as estratégias de *picking* (como *Batch* ou *Wave Picking*) necessárias para a operação. | **Análise de Requisitos Detalhada:** Definir claramente as necessidades de roteirização e *picking* antes da compra. **Prova de Conceito (PoC):** Exigir que o fornecedor demonstre a funcionalidade de roteirização com dados reais da empresa antes da contratação. 
+
+     </p>
+     
+     <p>
+        **6. Necessidade de Mudança no Layout (Slotting)** | O WMS pode sugerir rotas ótimas, mas o *layout* físico e a alocação de produtos (*slotting*) podem ser ineficientes. O sistema pode roteirizar o operador para um item de alta rotatividade que está no fundo do armazém. | **Otimização de Slotting:** Utilizar a análise ABC (Curva de Pareto) para realocar itens de alta rotatividade (Curva A) para as áreas de *picking* mais acessíveis e próximas à expedição, maximizando o ganho da roteirização.
+     </p> 
+
+        <h2>Conclusão</h2>
+
+    <p>
+        Superar esses desafios exige um investimento não apenas em tecnologia (o WMS), mas também em **pessoas** (treinamento e engajamento) e **processos** (padronização de dados e mapeamento). A implementação bem-sucedida de um WMS para roteirização de *picking* transforma o armazém de um centro de custo em um diferencial competitivo, mas requer uma gestão de projeto rigorosa e multidisciplinar.
+    </p>
+    </main>
+
+    <footer>Guia de Roteirização</footer>
+</body>
+</html>

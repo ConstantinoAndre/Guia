@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="teste/estilo.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <h1>
+            Otimização da Roteirização de Separação (Picking)
+        </h1>
+    </header>
+
+    <nav>
+        <a href="roteirização.html">Roteirização</a> |
+        <a href="treinamento.html">Treinamento</a> |
+        <a href="otimização.html">Otimização</a> |
+        <a href="kpis.html">Kpis</a> |
+    </nav>
+    <main>
+        
+    <p>
+        A roteirização de separação, ou *picking*, é um dos processos mais críticos e de maior custo em operações de armazenagem e logística. A otimização desse processo visa **minimizar a distância total percorrida** pelos operadores, reduzindo o tempo de ciclo do pedido e, consequentemente, os custos operacionais.
+    </p>
+    
+    <h2>
+        1. Estratégias de Roteirização (Picking Path Strategies)
+    </h2>
+
+    <p>
+        A escolha do método de roteirização impacta diretamente a eficiência do percurso. Os principais métodos incluem:
+    </p>
+
+    <h3>
+        | Estratégia | Descrição | Vantagens | Desvantagens |
+    </h3>
+
+    <p>
+        | **S-Shape (Serpentina)** | O operador percorre todo o corredor, entrando e saindo de cada lado, em um padrão de "S". | Simples de implementar e ideal para corredores com alta densidade de itens a serem coletados. | Pode resultar em longos percursos desnecessários se a densidade de coleta for baixa. |
+        | **Return (Retorno)** | O operador entra no corredor, coleta os itens e retorna pelo mesmo caminho. | Eficiente quando os itens a serem coletados estão concentrados no início do corredor. | Ineficiente se a coleta for no final do corredor, exigindo um longo retorno. |
+        | **Largest Gap (Maior Vão)** | O operador entra no corredor, coleta os itens e sai pelo lado oposto se o último item estiver além do ponto médio do corredor, ou retorna se estiver antes. | Combina a eficiência do S-Shape e do Return, adaptando-se à localização do último item. | Requer um sistema de gerenciamento mais sofisticado para determinar o ponto de saída ideal. |
+        | **Midpoint (Ponto Médio)** | Similar ao Largest Gap, mas a decisão de retornar ou seguir é baseada em um ponto fixo (geralmente o meio do corredor). | Mais simples de implementar que o Largest Gap. | Menos adaptável a distribuições irregulares de itens. |
+    </p>
+
+     <h2>
+        2. Métodos de Separação (Picking Methods)
+     </h2>
+
+     <p>
+        A tecnologia deve atuar como um guia constante, tornando a adesão à rota otimizada a opção mais fácil e intuitiva.
+     </p> 
+
+     <p>
+        *   **WMS como Guia Único:** O Sistema de Gerenciamento de Armazém (WMS) deve ser a única fonte de instrução de rota. O sistema deve apresentar a sequência de coleta de forma clara e passo a passo, eliminando a necessidade de o operador tomar decisões de rota.
+*   **Tecnologias de Apoio à Rota:** Utilizar tecnologias que forcem ou facilitem a adesão à rota:
+    *   **Voice Picking:** O sistema dita a próxima localização, mantendo o operador focado e com as mãos livres.
+    *   **Coletores de Dados/Tablets:** Exibir mapas dinâmicos ou setas direcionais que guiam o operador visualmente.
+*   **Design de Interface Intuitivo:** A interface do WMS no dispositivo do operador deve ser simples, com letras grandes e informações mínimas, focada apenas na próxima ação e localização, para evitar distrações e erros.
+     </p>
+
+     <h2>
+        3. Tecnologias e Ferramentas de Otimização
+     </h2>
+     
+     <p>
+        A implementação de tecnologias modernas é fundamental para alcançar a máxima eficiência:
+     </p> 
+
+     <p>
+        *   **Sistemas de Gerenciamento de Armazém (WMS - Warehouse Management System):** Essenciais para aplicar algoritmos de roteirização complexos, gerenciar a alocação de pedidos (batching e wave picking) e otimizar o *layout* do armazém.
+        *   **Algoritmos de Otimização:** Utilização de algoritmos como o **Algoritmo Genético** ou o **Problema do Caixeiro Viajante (TSP)** para calcular a rota mais curta em tempo real, considerando as restrições do *layout*.
+        *   **Tecnologias de Apoio à Separação:**
+        *   **Pick-to-Light:** Luzes indicam a localização e a quantidade a ser coletada.
+        *   **Voice Picking:** O operador recebe instruções por voz via fone de ouvido.
+        *   **Dispositivos Móveis/Scanners:** Uso de coletores de dados e tablets para confirmação de coleta e orientação de rota.
+     </p>
+
+     <h2>
+        4. Otimização do Layout e Endereçamento
+     </h2>
+
+     <p>
+        A forma como os produtos são armazenados afeta diretamente a roteirização:
+     </p>
+
+     <p>
+        *   **Análise ABC (Curva de Pareto):** Itens de alta rotatividade (Curva A) devem ser posicionados nas áreas de mais fácil acesso e próximas à área de expedição para minimizar o percurso.
+        *   **Cross-Docking:** Para itens de alta demanda e fluxo rápido, o *cross-docking* pode eliminar a necessidade de armazenamento e separação tradicionais.
+        *   **Endereçamento Lógico:** Utilizar um sistema de endereçamento que facilite a roteirização (ex: endereços sequenciais que sigam o fluxo natural do operador).
+     </p>
+
+     <h2>
+        5. Medição e Melhoria Contínua
+     </h2>
+
+     <p>
+        A otimização é um processo contínuo:
+     </p>
+
+     <p>
+        *   **Métricas Chave (KPIs):** Monitorar a distância percorrida por pedido, o tempo de ciclo do pedido e a produtividade por operador.
+        *   **Simulação:** Utilizar softwares de simulação para testar diferentes *layouts* e estratégias de roteirização antes da implementação física.
+        *   **Treinamento:** Garantir que os operadores compreendam e sigam as rotas otimizadas sugeridas pelo WMS.
+
+     </p>
+        <h2>Conclusão</h2>
+        
+     <p>
+        Ao combinar a estratégia de roteirização correta, o método de separação adequado e o suporte de um WMS robusto, é possível alcançar ganhos significativos na produtividade e na redução de custos logísticos.
+     </p>
+    </main>
+
+    <footer>Guia de Roteirização</footer>
+</body>
+</html>
